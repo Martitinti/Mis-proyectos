@@ -1,39 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Análisis Centros Médicos en Chile</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Infovis - Análisis Salud Chile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header>
+    <h1>Centros Médicos en Chile</h1>
+    <nav>
+      <a href="#intro">Inicio</a>
+      <a href="#visual">Visualizaciones</a>
+      <a href="#datos">Datos</a>
+      <a href="#bibliografia">Fuentes</a>
+    </nav>
+  </header>
+
   <div class="container">
-    <h1>Análisis geográfico y social de centros médicos en Chile</h1>
-    <p class="subtitulo">Proyecto Infovis</p>
-    <p>Martin Castro, Victoria Otárola, Josefa Venegas</p>
 
-    <h2>Introducción</h2>
-    <p>La distribución de la infraestructura sanitaria en una ciudad no solo refleja su desarrollo urbano, sino también las desigualdades sociales que atraviesan a sus habitantes. En este proyecto, realizamos un análisis geográfico y social de los establecimientos de salud vigentes en la Región Metropolitana de Chile, utilizando datos abiertos publicados por el Ministerio de Salud. A través de una visualización basada en mapas de calor, buscamos identificar patrones de concentración y carencias en la ubicación de hospitales, consultorios, clínicas y otros centros médicos. Nuestro objetivo es evidenciar las diferencias entre comunas urbanas y periféricas en el acceso a la atención en salud, promoviendo así una reflexión informada sobre la equidad territorial.</p>
+    <section id="intro">
+      <h2>Descubre la Historia Detrás de Cada Centro Médico</h2>
+      <p style="font-size: 1.3em; font-weight: 500; color: #2D2926; margin-bottom: 30px;">La distribución de la infraestructura sanitaria en una ciudad es el reflejo de nuestra sociedad — donde cada centro médico cuenta una historia sobre acceso, equidad y desarrollo urbano.</p>
+      
+      <p>En este proyecto innovador, nos sumergimos en un análisis profundo de los establecimientos de salud en la Región Metropolitana de Chile. Utilizando datos oficiales del Ministerio de Salud, revelamos patrones que van más allá de simples ubicaciones en un mapa — son historias sobre comunidades y sus necesidades.</p>
+      
+      <p>A través de visualizaciones dinámicas y mapas de calor, descubrimos dónde se concentran nuestros recursos médicos y, más importante aún, dónde hacen falta. Cada punto en nuestros mapas representa más que un establecimiento — representa el acceso de una comunidad a un derecho fundamental.</p>
+      
+      <p style="font-style: italic; color: #6B5F5F; margin-top: 40px; text-align: center; font-size: 1.2em;">"Nuestro objetivo es simple pero poderoso: hacer visible lo invisible, transformando datos en insights que impulsen un cambio real hacia un sistema de salud más equitativo."</p>
+    </section>
 
-    <h2>Visualización</h2>
-    <p>Nuestra visualización muestra la distribución de los distintos tipos de establecimientos de salud vigentes en la Región Metropolitana.</p>
-    <div class="imagenes">
-      <img src="img/max.png" alt="Mapa máxima concentración">
-      <img src="img/mid.png" alt="Mapa concentración media">
-      <img src="img/low.png" alt="Mapa baja concentración">
-    </div>
+    <section id="visual">
+      <h2>Visualización</h2>
+      <p class="section-subtitle">Explorando patrones de distribución sanitaria a través de mapas de calor.</p>
+      <div class="imagenes">
+        <figure>
+          <img src="img/max.png" alt="Mapa alta concentración">
+          <figcaption>Alta concentración: Zonas con mayor densidad de centros médicos</figcaption>
+        </figure>
+        <figure>
+          <img src="img/mid.png" alt="Mapa concentración media">
+          <figcaption>Concentración media: Áreas con distribución moderada</figcaption>
+        </figure>
+        <figure>
+          <img src="img/low.png" alt="Mapa baja concentración">
+          <figcaption>Baja concentración: Sectores con menor acceso a servicios médicos</figcaption>
+        </figure>
+      </div>
+      <a class="boton" href="#datos">Ver datos</a>
+</section>
 
-    <h2>Datos</h2>
-    <p>Los datos fueron extraídos de <a href="https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes" target="_blank">datos.gob.cl</a>, trabajados de tal forma que datos nulos o poco representativos fueran borrados y filtrados según características que favorecieran nuestro análisis.</p>
+    <section id="datos">
+      <h2>Datos utilizados</h2>
+      <p>Los datos fueron extraídos desde <a href="https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes" target="_blank">datos.gob.cl</a> y procesados para eliminar registros nulos, normalizar nombres y clasificar según tipo de establecimiento.</p>
+      <p>Para la delimitación geográfica, se utilizó información oficial del Ministerio de Medio Ambiente sobre límites urbanos.</p>
+    </section>
 
-    <h2>Bibliografía</h2>
-    <ul>
-      <li><a href="https://lineasdebasepublicas.mma.gob.cl/datos_abiertos/dataset/limite-urbano-prms-metropolitana" target="_blank">Límites urbanos PRMS Metropolitana</a></li>
-      <li><a href="https://github.com/caracena/chile-geojson" target="_blank">Chile GeoJSON</a></li>
-      <li><a href="https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes" target="_blank">Establecimientos de Salud Vigentes</a></li>
-    </ul>
+    <section id="bibliografia">
+      <h2>Bibliografía y fuentes</h2>
+      <ul>
+        <li><a href="https://lineasdebasepublicas.mma.gob.cl/datos_abiertos/dataset/limite-urbano-prms-metropolitana" target="_blank">Límites PRMS Metropolitana</a></li>
+        <li><a href="https://github.com/caracena/chile-geojson" target="_blank">Chile GeoJSON</a></li>
+        <li><a href="https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes" target="_blank">Establecimientos de Salud Vigentes</a></li>
+      </ul>
+    </section>
+
   </div>
 
-  <script src="scripts.js"></script>
+  <footer>
+    Proyecto InfoVis 2025 · Victoria Otárola · Martin Castro · Josefa Venegas
+  </footer>
 </body>
 </html>
