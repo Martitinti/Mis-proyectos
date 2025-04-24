@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análisis Centros Médicos en Chile</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Análisis geográfico y social de centros médicos en Chile</h1>
+    <p class="subtitulo">Proyecto Infovis</p>
+    <p>Martin Castro, Victoria Otárola, Josefa Venegas</p>
+
+    <h2>Introducción</h2>
+    <p>La distribución de la infraestructura sanitaria en una ciudad no solo refleja su desarrollo urbano, sino también las desigualdades sociales que atraviesan a sus habitantes. En este proyecto, realizamos un análisis geográfico y social de los establecimientos de salud vigentes en la Región Metropolitana de Chile, utilizando datos abiertos publicados por el Ministerio de Salud. A través de una visualización basada en mapas de calor, buscamos identificar patrones de concentración y carencias en la ubicación de hospitales, consultorios, clínicas y otros centros médicos. Nuestro objetivo es evidenciar las diferencias entre comunas urbanas y periféricas en el acceso a la atención en salud, promoviendo así una reflexión informada sobre la equidad territorial.</p>
+
+    <h2>Visualización</h2>
+    <p>Nuestra visualización muestra la distribución de los distintos tipos de establecimientos de salud vigentes en la Región Metropolitana.</p>
+    <div class="imagenes">
+      <img src="img/max.png" alt="Mapa máxima concentración">
+      <img src="img/mid.png" alt="Mapa concentración media">
+      <img src="img/low.png" alt="Mapa baja concentración">
+    </div>
+
+    <h2>Datos</h2>
+    <p>Los datos fueron extraídos de <a href="https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes" target="_blank">datos.gob.cl</a>, trabajados de tal forma que datos nulos o poco representativos fueran borrados y filtrados según características que favorecieran nuestro análisis.</p>
+
+    <h2>Bibliografía</h2>
+    <ul>
+      <li><a href="https://lineasdebasepublicas.mma.gob.cl/datos_abiertos/dataset/limite-urbano-prms-metropolitana" target="_blank">Límites urbanos PRMS Metropolitana</a></li>
+      <li><a href="https://github.com/caracena/chile-geojson" target="_blank">Chile GeoJSON</a></li>
+      <li><a href="https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes" target="_blank">Establecimientos de Salud Vigentes</a></li>
+    </ul>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
