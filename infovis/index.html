@@ -1,89 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análisis Centros Médicos RM</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Análisis Centros Médicos RM</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</style>
+  
 </head>
 <body>
-    <nav class="top-nav">
-        <div class="nav-content">
-            <p class="nav-title">Análisis de Centros Médicos</p>
-        </div>
-    </nav>
+  <header class="hero">
+    <div class="container">
+      <h1>Análisis geográfico y social de centros médicos en Chile</h1>
+      <div class="divider"></div>
+      <p class="authors"><strong>Proyecto Infovis</strong> - <strong>UC</strong></p>
+    </div>
+  </header>
+  <main class="container">
+  </section class="container">
+    <h2>Introducción</h2>
+  </section class="container">
+    <p>La distribución espacial de la infraestructura sanitaria constituye un indicador fundamental que no solo evidencia el desarrollo urbanístico de una región metropolitana, sino que también pone de manifiesto las disparidades socioeconómicas inherentes a su tejido social. El presente estudio aborda un análisis geoespacial y sociodemográfico exhaustivo de los establecimientos de salud operativos en la Región Metropolitana de Chile, fundamentado en datos oficiales proporcionados por el Ministerio de Salud. Mediante la implementación de técnicas de visualización basadas en mapas de calor, esta investigación se propone identificar y caracterizar los patrones de distribución espacial, concentración y déficit en la localización de la infraestructura sanitaria, incluyendo hospitales, centros de atención primaria, clínicas y demás establecimientos de salud.</p>
+  </section>
+  <section class="container">
+    <h2>Visualización</h2>
+  <section>
+  <main>
+    <div class="filtro-nivel" style="padding: 1em; text-align: center;">
+      <label for="filtro">Filtrar por nivel de atención: </label>
+      <select id="filtro">
+        <option value="Todos">Todos</option>
+        <option value="Primaria">Primaria</option>
+        <option value="Secundaria">Secundaria</option>
+        <option value="Otro">Otro</option>
+      </select>
+    </div>
+    
+    <section id="mapa">
+      <div id="map"></div>
+    </section>
 
-    <header class="main-header">
-        <div class="header-content">
-            <h1>Análisis geográfico y social de centros médicos en Chile</h1>
-            <div class="divider"></div>
-            <p class="authors"><strong>Proyecto Infovis</strong><br>Martin Castro, Victoria Otárola, Josefa Venegas</p>
-        </div>
-    </header>
+    <section class="container">
+      <p>La visualización ilustra la distribución geoespacial de los establecimientos de salud en la Región Metropolitana, categorizados según su nivel de complejidad asistencial, incluyendo hospitales de alta complejidad, centros de atención primaria, clínicas y centros médicos especializados. Este análisis cartográfico tiene como propósito fundamental examinar los patrones de distribución de la infraestructura sanitaria regional, permitiendo identificar las asimetrías existentes entre las zonas urbanas consolidadas y las áreas periféricas en desarrollo, contribuyendo así a una comprensión más profunda de la accesibilidad a servicios de salud en el territorio metropolitano.<p>
+      </section>
 
-    <main class="content-wrapper">
-        <section>
-            <h2>Introducción</h2>
-            <p>La distribución espacial de la infraestructura sanitaria constituye un indicador fundamental que no solo evidencia el desarrollo urbanístico de una región metropolitana, sino que también pone de manifiesto las disparidades socioeconómicas inherentes a su tejido social. El presente estudio aborda un análisis geoespacial y sociodemográfico exhaustivo de los establecimientos de salud operativos en la Región Metropolitana de Chile, fundamentado en datos oficiales proporcionados por el Ministerio de Salud. Mediante la implementación de técnicas de visualización basadas en mapas de calor, esta investigación se propone identificar y caracterizar los patrones de distribución espacial, concentración y déficit en la localización de la infraestructura sanitaria, incluyendo hospitales, centros de atención primaria, clínicas y demás establecimientos de salud.</p>
-        </section>
+    <section id="explicacion" class="container">
+      <h2>Nota sobre los datos poblacionales</h2>
+      <p>
+        Para realizar este análisis, fue fundamental incorporar datos demográficos actualizados de cada comuna. Estos datos fueron extraídos del Sistema Integrado de Información Territorial (SIIT) de la Biblioteca del Congreso Nacional de Chile (BCN): <a href="https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=13201" target="_blank">ver fuente</a>. Es importante mencionar que trabajamos con proyecciones poblacionales para el año 2024, lo cual nos permitió obtener una perspectiva más actualizada de la relación entre la infraestructura sanitaria y la población beneficiaria. La decisión de utilizar estas estimaciones se basó en la necesidad de contar con datos que reflejen de manera más precisa la realidad actual de las comunas estudiadas.</p>
+      <h2>Metodología</h2>
+      <p> La investigación se desarrolló mediante un análisis cuantitativo de datos geoespaciales, empleando técnicas de visualización avanzadas para representar la distribución de establecimientos sanitarios. La metodología incluyó:</p>
+      <ul>
+        <li>Recopilación y depuración de datos de establecimientos de salud</li>
+        <li>Análisis geoespacial utilizando sistemas de información geográfica</li>
+        <li>Categorización de centros médicos por nivel de complejidad</li>
+        <li>Generación de mapas de calor para visualizar la distribución</li>
+    </ul>
+  
+      <section>
+        <h2>Fuentes de datos</h2>
+        <ul>
+            <li><a href="https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes" target="_blank">Establecimientos de salud vigentes</a></li>
+            <li><a href="https://lineasdebasepublicas.mma.gob.cl/datos_abiertos/dataset/limite-urbano-prms-metropolitana" target="_blank">Límites urbanos PRMS</a></li>
+            <li><a href="https://github.com/caracena/chile-geojson" target="_blank">GeoJSON comunas Chile</a></li>
+        </ul>
+    </section>
+  </main>
 
-        <section>
-            <h2>Visualización</h2>
-            <img src="img/max.png" alt="Mapa Alta Complejidad">
-            <img src="img/mid.png" alt="Mapa Mediana Complejidad">
-            <img src="img/low.png" alt="Mapa Baja Complejidad">
-            <p>La visualización ilustra la distribución geoespacial de los establecimientos de salud en la Región Metropolitana, categorizados según su nivel de complejidad asistencial, incluyendo hospitales de alta complejidad, centros de atención primaria, clínicas y centros médicos especializados. Este análisis cartográfico tiene como propósito fundamental examinar los patrones de distribución de la infraestructura sanitaria regional, permitiendo identificar las asimetrías existentes entre las zonas urbanas consolidadas y las áreas periféricas en desarrollo, contribuyendo así a una comprensión más profunda de la accesibilidad a servicios de salud en el territorio metropolitano.</p>
-        </section>
+  <footer>
+    <p>Visualización desarrollada por Martin Castro y Victoria Otarola — Mayo 2025</p>
+  </footer>
 
-        <section>
-            <h2>Gráficos por comuna</h2>
-            <img src="graficos_comunas/Santiago_centros_medicos.png" alt="Santiago">
-            <img src="graficos_comunas/La_Florida_centros_medicos.png" alt="La Florida">
-            <img src="graficos_comunas/Puente_Alto_centros_medicos.png" alt="Puente Alto">
-            <p>Actualmente, los gráficos se presentan de manera secuencial. A futuro, se proyecta que esta visualización permita navegar de manera horizontal o mediante una galería dinámica.</p>
-        </section>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <script src="js/main.js"></script>
+  
 
-        <section>
-            <h2>Nota sobre los datos poblacionales</h2>
-            <p>Para realizar este análisis, fue fundamental incorporar datos demográficos actualizados de cada comuna. Estos datos fueron extraídos del Sistema Integrado de Información Territorial (SIIT) de la Biblioteca del Congreso Nacional de Chile (BCN): <a href="https://www.bcn.cl/siit/reportescomunales/comunas_v.html?anno=2024&idcom=13201" target="_blank">ver fuente</a>. Es importante mencionar que trabajamos con proyecciones poblacionales para el año 2024, lo cual nos permitió obtener una perspectiva más actualizada de la relación entre la infraestructura sanitaria y la población beneficiaria. La decisión de utilizar estas estimaciones se basó en la necesidad de contar con datos que reflejen de manera más precisa la realidad actual de las comunas estudiadas.</p>
-        </section>
+  
 
-        <section>
-            <h2>Metodología</h2>
-            <p>La investigación se desarrolló mediante un análisis cuantitativo de datos geoespaciales, empleando técnicas de visualización avanzadas para representar la distribución de establecimientos sanitarios. La metodología incluyó:</p>
-            <ul>
-                <li>Recopilación y depuración de datos de establecimientos de salud</li>
-                <li>Análisis geoespacial utilizando sistemas de información geográfica</li>
-                <li>Categorización de centros médicos por nivel de complejidad</li>
-                <li>Generación de mapas de calor para visualizar la distribución</li>
-            </ul>
-        </section>
 
-        <section>
-            <h2>Hallazgos Principales</h2>
-            <p>El análisis de la distribución de centros médicos en la Región Metropolitana revela patrones significativos:</p>
-            <ul>
-                <li>Concentración de establecimientos de alta complejidad en zonas urbanas centrales</li>
-                <li>Déficit de servicios especializados en áreas periféricas</li>
-                <li>Correlación entre densidad poblacional y disponibilidad de servicios médicos</li>
-                <li>Brechas significativas en la accesibilidad a servicios de salud entre comunas</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Fuentes de datos</h2>
-            <ul>
-                <li><a href="https://datos.gob.cl/dataset/establecimientos-de-salud-vigentes" target="_blank">Establecimientos de salud vigentes</a></li>
-                <li><a href="https://lineasdebasepublicas.mma.gob.cl/datos_abiertos/dataset/limite-urbano-prms-metropolitana" target="_blank">Límites urbanos PRMS</a></li>
-                <li><a href="https://github.com/caracena/chile-geojson" target="_blank">GeoJSON comunas Chile</a></li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <div class="divider"></div>
-        <p>Proyecto académico — Visualización de Datos 2024</p>
-    </footer>
 </body>
 </html>
