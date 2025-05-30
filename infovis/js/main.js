@@ -132,3 +132,71 @@ legend.onAdd = function(map) {
 legend.addTo(map);
 
 iniciar();
+
+const imagenes = [
+  'img/Alhué_centros_medicos.png',
+  'img/Buin_centros_medicos.png',
+  'img/Calera_de_Tango_centros_medicos.png',
+  'img/Cerrillos_centros_medicos.png',
+  'img/Cerro_Navia_centros_medicos.png',
+  'img/Colina_centros_medicos.png',
+  'img/Conchalí_centros_medicos.png',
+  'img/Curacaví_centros_medicos.png',
+  'img/El_Bosque_centros_medicos.png',
+  'img/El_Monte_centros_medicos.png',
+  'img/Estación_Central_centros_medicos.png',
+  'img/Huechuraba_centros_medicos.png',
+  'img/Independencia_centros_medicos.png',
+  'img/Isla_de_Maipo_centros_medicos.png',
+  'img/Lampa_centros_medicos.png',
+  'img/Las_Condes_centros_medicos.png',
+  'img/La_Cisterna_centros_medicos.png',
+  'img/La_Florida_centros_medicos.png',
+  'img/La_Granja_centros_medicos.png',
+  'img/La_Pintana_centros_medicos.png',
+  'img/La_Reina_centros_medicos.png',
+  'img/Lo_Barnechea_centros_medicos.png',
+  'img/Lo_Espejo_centros_medicos.png',
+  'img/Lo_Prado_centros_medicos.png',
+  'img/Macul_centros_medicos.png',
+  'img/Maipú_centros_medicos.png',
+  'img/Maria_Pinto_centros_medicos.png',
+  'img/Melipilla_centros_medicos.png',
+  'img/Padre_Hurtado_centros_medicos.png',
+  'img/Paine_centros_medicos.png',
+  'img/Pedro_Aguirre_Cerda_centros_medicos.png',
+  'img/Peñaflor_centros_medicos.png',
+  'img/Peñalolén_centros_medicos.png',
+  'img/Pirque_centros_medicos.png',
+  'img/Providencia_centros_medicos.png',
+  'img/Pudahuel_centros_medicos.png',
+  'img/Puente_Alto_centros_medicos.png',
+  'img/Quilicura_centros_medicos.png',
+  'img/Quinta_Normal_centros_medicos.png',
+  'img/Recoleta_centros_medicos.png',
+  'img/Renca_centros_medicos.png',
+  'img/Santiago_centros_medicos.png',
+  'img/San_Bernardo_centros_medicos.png',
+  'img/San_Joaquín_centros_medicos.png',
+  'img/San_José_de_Maipo_centros_medicos.png',
+  'img/San_Miguel_centros_medicos.png',
+  'img/San_Pedro_centros_medicos.png',
+  'img/San_Ramón_centros_medicos.png',
+  'img/Talagante_centros_medicos.png',
+  'img/Tiltil_centros_medicos.png',
+  'img/Vitacura_centros_medicos.png',
+  'img/Ñuñoa_centros_medicos.png'
+];
+
+
+let indice = 0;
+
+function cambiarImagen() {
+  const galeria = document.getElementById('galeria');
+  galeria.classList.add('img-hidden');
+  setTimeout(() => {
+    indice = (indice + 1) % imagenes.length;
+    galeria.src = imagenes[indice];
+    galeria.classList.remove('img-hidden');
+  }, 300);
+}
